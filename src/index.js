@@ -6,11 +6,13 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {GlobalStyle} from "./configs/global.styled";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <React.StrictMode>
+            <GlobalStyle/>
             <App/>
         </React.StrictMode>
     </BrowserRouter>
