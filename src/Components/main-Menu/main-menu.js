@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {TextField, Button} from "@mui/material";
 import {ButtonWrapper, MainMenuWrapper} from "./main-menu.styled";
+import {Link} from "react-router-dom";
 
 
 const MainMenu = () => {
@@ -17,7 +18,9 @@ const MainMenu = () => {
             />
             <ButtonWrapper>
                 <Button variant="outlined" href="#outlined-buttons" size="large">
-                    Link
+                    <Link to={`/${username}`}>
+                        Link
+                    </Link>
                 </Button>
             </ButtonWrapper>
         </MainMenuWrapper>
