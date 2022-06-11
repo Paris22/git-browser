@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family:Open-Sans, Helvetica, Sans-Serif, serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    background: rgb(140,130,254);
+    background: linear-gradient(90deg, rgba(140,130,254,0.25) 5%, rgba(255,255,255,1) 100%);
   }
   #root {
     min-height: 100vh;

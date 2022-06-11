@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import axios from "axios";
-import {Button} from "@mui/material";
+
+import {Header, ButtonWrapper, Title, User, UserAvatar, Description} from "./user-repository-name.styled";
+import {Avatar, Button} from "@mui/material";
 import ReactMarkdown from 'react-markdown'
 
 const UserRepositoryName = () => {
@@ -20,17 +22,24 @@ const UserRepositoryName = () => {
 
     return (
         <div>
-            <header>
-                <h1>{username} {repositoryName}</h1>
-                <Button variant="outlined" href="#outlined-buttons" size="large">
-                    <Link to={`/${username}`}>
-                        Go back
-                    </Link>
-                </Button>
-            </header>
-            <div className="description">
+            <Header>
+                <User>
+                    <UserAvatar>
+                        <Avatar alt = "Avatar Repo" src={username} sx={{ width: 40, height: 40 }}/>
+                    </UserAvatar>
+                    <Title>{username} {repositoryName}</Title>
+                </User>
+                <ButtonWrapper>
+                    <Button variant="outlined" href="#outlined-buttons" size="large">
+                        <Link to={`/${username}`}>
+                            Go back
+                        </Link>
+                    </Button>
+                </ButtonWrapper>
+            </Header>
+            <Description>
                 <ReactMarkdown>{userRepName}</ReactMarkdown>
-            </div>
+            </Description>
         </div>
     );
 };
