@@ -16,5 +16,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   #root {
     min-height: 100vh;
+    padding: 25px;
   }
 `
