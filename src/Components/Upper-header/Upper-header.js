@@ -3,11 +3,12 @@ import {Avatar, Button} from "@mui/material";
 import {Link, useParams} from "react-router-dom";
 import {Header, ButtonWrapper, Title, User, UserAvatar} from "./Upper-header.styled";
 
-const UpperHeader = ({userData}) => {
+const UpperHeader = ({userData, children}) => {
     const {username, repositoryName} = useParams()
     if (username) {
         return (
             <Header>
+                {children}
                 <User>
                     <UserAvatar>
                         <Avatar alt="Avatar Repo" src={userData['avatar_url']} sx={{width: 40, height: 40}}/>
@@ -27,6 +28,7 @@ const UpperHeader = ({userData}) => {
     if (repositoryName) {
         return (
             <Header>
+                {children}
                 <User>
                     <UserAvatar>
                         <Avatar alt="Avatar Repo" src={userData['avatar_url']} sx={{width: 40, height: 40}}/>
@@ -43,6 +45,7 @@ const UpperHeader = ({userData}) => {
             </Header>
         )
     }
+
 };
 
 export default UpperHeader;

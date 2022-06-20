@@ -51,12 +51,16 @@ function App() {
 
     return (
         <>
-            <UpperHeader userData={userData}/>
             <Routes>
                 <Route exact path="/" element={<MainMenu/>}/>
-                <Route exact path="/:username" element={<RepositoryName usersRep={usersRep}/>}/>
-                <Route exact path="/:username/:repositoryName" element={<UserRepositoryName userRepName={userRepName}/>}/>
             </Routes>
+            <UpperHeader userData={userData}>
+                <Routes>
+                    <Route exact path="/:username" element={<RepositoryName usersRep={usersRep}/>}/>
+                    <Route exact path="/:username/:repositoryName"
+                           element={<UserRepositoryName userRepName={userRepName}/>}/>
+                </Routes>
+            </UpperHeader>
         </>
     );
 }
